@@ -1,0 +1,35 @@
+{
+  "name": "@acme/next-app",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "panda codegen --clean --hash --minify --silent",
+    "build": "pnpm prebuild && next build",
+    "dev": "rm -rf .next/ && next dev",
+    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint src",
+    "prepare": "panda codegen --clean --silent",
+    "start": "next start",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --pretty"
+  },
+  "dependencies": {
+    "@acme/design-system": "workspace:*",
+    "next": "13.4.9",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@acme/panda-preset": "workspace:*",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.7",
+    "postcss": "8.4.27",
+    "postcss-flexbugs-fixes": "5.0.2",
+    "postcss-preset-env": "9.0.0"
+  }
+}

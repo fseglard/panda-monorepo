@@ -1,0 +1,81 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": true,
+      "typescript": true
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "react/jsx-no-target-blank": "off",
+    "react/no-unknown-property": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "extends": ["plugin:@typescript-eslint/recommended", "plugin:import/typescript"],
+      "plugins": ["@typescript-eslint", "deprecation"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "project": ["./tsconfig.json", "./apps/*/tsconfig.json"],
+        "warnOnUnsupportedTypeScriptVersion": true
+      },
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true,
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "deprecation/deprecation": "warn",
+        "import/namespace": "off",
+        "import/default": "off",
+        "import/no-named-as-default-member": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts?(x)"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ],
+      "plugins": ["jest", "jest-dom", "testing-library"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}

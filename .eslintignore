@@ -1,0 +1,8 @@
+# See https://eslint.org/docs/latest/use/configure/ignore#the-eslintignore-file for more about ignoring files.
+
+# cache
+.next
+.vercel
+
+# tests
+coverage

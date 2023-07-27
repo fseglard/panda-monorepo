@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@acme/styled-system/*": ["./styled-system/*"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo"
+  },
+  "include": ["src", "panda.config.ts"]
+}

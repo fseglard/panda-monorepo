@@ -1,0 +1,21 @@
+{
+  "name": "@acme/design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint src",
+    "panda:codegen": "panda codegen --clean",
+    "panda:watch": "panda --clean --watch",
+    "prepare": "pnpm panda:codegen --clean --silent",
+    "typecheck": "tsc --pretty"
+  },
+  "devDependencies": {
+    "@acme/panda-preset": "workspace:*",
+    "@types/react": "18.2.14",
+    "react": "18.2.0"
+  }
+}

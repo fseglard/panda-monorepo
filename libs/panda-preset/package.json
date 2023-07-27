@@ -1,0 +1,13 @@
+{
+  "name": "@acme/panda-preset",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint src",
+    "typecheck": "tsc --pretty"
+  }
+}
